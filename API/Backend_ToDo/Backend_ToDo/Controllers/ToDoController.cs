@@ -61,7 +61,7 @@ namespace Backend_ToDo.Controllers
                         int rowsAffected = myCommand.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
-                            return Ok("Tarefa adicionada com sucesso.");
+                            return Ok(new { message = "Tarefa adicionada com sucesso." });
                         else
                             return StatusCode(500, "Erro ao adicionar tarefa.");
                     }
@@ -90,7 +90,7 @@ namespace Backend_ToDo.Controllers
                         int rowsAffected = myCommand.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
-                            return Ok("Tarefa deletada com sucesso.");
+                            return Ok(new { message = "Tarefa deletada com sucesso." });
                         else
                             return NotFound("Tarefa não encontrada.");
                     }

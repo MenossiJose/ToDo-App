@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Simple Todo App!</h1>
+
+  <input [(ngModel)]="newTask" placeholder="Add a new task" />
+  <button (click)="addTask()">Add</button>
+
+  <div class="task-list">
+    <div *ngFor="let task of tasks" class="task-item">
+      <app-task [task]="task" (deleteTaskEvent)="deleteTask($event)"></app-task>
+    </div>
+  </div>
+</div>
